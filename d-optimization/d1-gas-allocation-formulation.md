@@ -12,30 +12,32 @@ decisions are what make it mixed-integer.
 
 ## Key ideas
 
-- **Sets.** Sources `s` (3), plants `p` (4), components `c` (for example ethane, propane,
+- **Sets.** Sources $$s$$ (3), plants $$p$$ (4), components $$c$$ (for example ethane, propane,
   heavier liquids).
-- **Decision variables.** `x[s,p] ≥ 0`: volume from source `s` to plant `p` in the week.
-  Binary `y[...]` for discrete choices.
-- **Parameters.** Composition `a[s,c]` (share of component `c` in source `s`); extraction
-  efficiency `e[p,c]`; supply available per source; capacity per plant; quota per
+- **Decision variables.** $$x_{s,p} \ge 0$$: volume from source $$s$$ to plant $$p$$ in the week.
+  Binary $$y$$ variables for discrete choices.
+- **Parameters.** Composition $$a_{s,c}$$ (share of component $$c$$ in source $$s$$); extraction
+  efficiency $$e_{p,c}$$; supply available per source; capacity per plant; quota per
   component; margin per unit of each product; processing cost.
 - **Production.**
 
-  ```
-  out[c] = Σ_s Σ_p  a[s,c] · e[p,c] · x[s,p]
-  ```
+  $$
+  \text{out}_c = \sum_s \sum_p a_{s,c}\, e_{p,c}\, x_{s,p}
+  $$
 
-  Linear in `x` because composition and efficiency are given numbers.
+  Linear in $$x$$ because composition and efficiency are given numbers.
 - **Constraints.**
 
-  ```
-  Σ_p x[s,p] ≤ supply[s]            for each source
-  Σ_s x[s,p] ≤ capacity[p]          for each plant
-  out[c]     ≥ quota[c]             for each component
-  x[s,p]     ≤ M · y[s,p]           link flow to an on-off decision, if any
-  ```
+  $$
+  \begin{aligned}
+  \sum_p x_{s,p} &\le \text{supply}_s && \text{for each source} \\
+  \sum_s x_{s,p} &\le \text{capacity}_p && \text{for each plant} \\
+  \text{out}_c &\ge \text{quota}_c && \text{for each component} \\
+  x_{s,p} &\le M\, y_{s,p} && \text{links flow to an on-off decision, if any}
+  \end{aligned}
+  $$
 
-- **Objective.** Maximise `Σ_c margin[c]·out[c] − costs`.
+- **Objective.** Maximise $$\sum_c \text{margin}_c \cdot \text{out}_c - \text{costs}$$.
 - **Where integers come from (typical).** A plant or line being on or off; a minimum
   throughput if a plant runs at all; a limited number of source switches; discrete
   operating modes.

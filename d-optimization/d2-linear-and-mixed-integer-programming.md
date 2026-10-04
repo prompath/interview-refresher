@@ -13,7 +13,7 @@ found.
 
 ## Key ideas
 
-- **Linear programme.** `max cᵀx  s.t.  Ax ≤ b, x ≥ 0`. The feasible region is a convex
+- **Linear programme.** $$\max\; c^\top x \ \text{ subject to } \ Ax \le b,\ x \ge 0$$. The feasible region is a convex
   polytope; an optimum lies at a vertex.
 - **Solving LPs.** Simplex walks along vertices; interior-point methods cut through the
   inside. Both are fast in practice.
@@ -27,16 +27,16 @@ found.
 - **Branch and bound.**
   1. Solve the relaxation.
   2. If the solution is integral, it is a candidate (the *incumbent*).
-  3. Otherwise pick a fractional variable and create two subproblems (`x ≤ ⌊v⌋`,
-     `x ≥ ⌈v⌉`).
+  3. Otherwise pick a fractional variable and create two subproblems ($$x \le \lfloor v \rfloor$$,
+     $$x \ge \lceil v \rceil$$).
   4. Prune a subproblem if it is infeasible or its bound is no better than the incumbent.
 - **Cutting planes.** Extra valid inequalities that cut off fractional solutions and
   tighten the relaxation. Branch and cut combines both.
 - **MIP gap.**
 
-  ```
-  gap = |best bound − incumbent| / |incumbent|
-  ```
+  $$
+  \text{gap} = \frac{\lvert \text{best bound} - \text{incumbent} \rvert}{\lvert \text{incumbent} \rvert}
+  $$
 
   The solver stops at a tolerance; a 1% gap means the answer is proven within 1% of
   optimal.

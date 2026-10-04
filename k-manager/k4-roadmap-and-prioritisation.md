@@ -15,9 +15,9 @@ visible to stakeholders, and say no by showing what a yes would displace.
   stated.
 - **Scoring.**
 
-  ```
-  priority ≈ (value × probability of success) / effort
-  ```
+  $$
+  \text{priority} \approx \frac{\text{value} \times \text{probability of success}}{\text{effort}}
+  $$
 
   Value from a rough sizing; probability from data readiness and precedent. RICE (reach,
   impact, confidence, effort) is the same idea. The numbers are rough; the ranking

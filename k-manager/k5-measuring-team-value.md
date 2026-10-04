@@ -18,10 +18,13 @@ present a smaller figure with a method behind it than a large one built on attri
   outcome from day one. This is the strongest position a data science manager can hold.
 - **Return on investment.**
 
-  ```
-  ROI = (incremental value − cost) / cost
-  cost = people + platform and compute + vendor fees + cost of the action (calls, discounts)
-  ```
+  $$
+  \text{ROI} = \frac{\text{incremental value} - \text{cost}}{\text{cost}}
+  $$
+
+  $$
+  \text{cost} = \text{people} + \text{platform and compute} + \text{vendor fees} + \text{cost of the action (calls, discounts)}
+  $$
 
 - **Kinds of value.**
   - *Revenue uplift* (upsell, pricing).

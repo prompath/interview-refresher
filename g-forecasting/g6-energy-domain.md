@@ -31,7 +31,7 @@ that decides when to charge and discharge.
 - **Net load.** Load minus solar: what the grid or battery must supply.
 - **Battery scheduling: forecast, then optimise.**
   - Decision: charge or discharge power per time step.
-  - State of charge: `soc[t+1] = soc[t] + η_c·charge[t] − discharge[t]/η_d`, within
+  - State of charge: $$\text{soc}_{t+1} = \text{soc}_t + \eta_c\, \text{charge}_t - \text{discharge}_t / \eta_d$$, within
     capacity; power limits.
   - Objectives: shift solar energy to the evening (self-consumption), cut the peak
     (demand charge), buy when the tariff is low (time-of-use arbitrage).

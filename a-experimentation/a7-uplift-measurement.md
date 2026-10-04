@@ -14,11 +14,13 @@ separate two questions: does the *campaign* work (treated versus no contact) and
 
 - **Absolute and relative uplift.**
 
-  ```
-  absolute  = r_t − r_c
-  relative  = r_t / r_c − 1
-  incremental conversions = (r_t − r_c) · N_t
-  ```
+  $$
+  \begin{aligned}
+  \text{absolute uplift} &= r_t - r_c \\
+  \text{relative uplift} &= \frac{r_t}{r_c} - 1 \\
+  \text{incremental conversions} &= (r_t - r_c)\, N_t
+  \end{aligned}
+  $$
 
 - **ARPU uplift.** Difference in mean revenue per customer between groups, over *all*
   assigned customers, not only converters. Revenue is skewed, so use Welch or a bootstrap.

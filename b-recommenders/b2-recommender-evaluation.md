@@ -14,11 +14,13 @@ recommendations *change* behaviour needs an online test against a control.
 - **Split by time.** Train on the past, test on the future. Random splits leak.
 - **Metrics at k.**
 
-  ```
-  precision@k = relevant in top k / k
-  recall@k    = relevant in top k / all relevant
-  hit rate@k  = share of users with at least one relevant item in top k
-  ```
+  $$
+  \begin{aligned}
+  \text{precision@}k &= \frac{\text{relevant items in top } k}{k} \\
+  \text{recall@}k &= \frac{\text{relevant items in top } k}{\text{all relevant items}} \\
+  \text{hit rate@}k &= \text{share of users with at least one relevant item in top } k
+  \end{aligned}
+  $$
 
 - **Rank-aware metrics.**
   - *MRR*: mean of 1 / rank of the first relevant item.

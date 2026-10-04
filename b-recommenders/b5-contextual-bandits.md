@@ -19,15 +19,18 @@ reward plus an uncertainty bonus.
   - *UCB*: choose the arm with the highest upper confidence bound; uncertainty shrinks as
     an arm is tried.
   - *Thompson sampling*: sample each arm's reward from its posterior and pick the best.
-- **LinUCB (disjoint).** Per arm `a`, a ridge regression on context `x`:
+- **LinUCB (disjoint).** Per arm $$a$$, a ridge regression on context $$x$$:
 
-  ```
-  A_a = I + Σ x xᵀ          b_a = Σ r x          θ_a = A_a⁻¹ b_a
-  score_a = θ_aᵀ x + α · sqrt( xᵀ A_a⁻¹ x )
-  ```
+  $$
+  A_a = I + \sum x x^\top \qquad b_a = \sum r\,x \qquad \hat{\theta}_a = A_a^{-1} b_a
+  $$
 
-  The first term exploits, the second explores; α sets how much.
-- **Incremental updates.** `A_a` and `b_a` are sums, so each day's feedback is added
+  $$
+  \text{score}_a = \hat{\theta}_a^\top x + \alpha \sqrt{x^\top A_a^{-1} x}
+  $$
+
+  The first term exploits, the second explores; $$\alpha$$ sets how much.
+- **Incremental updates.** $$A_a$$ and $$b_a$$ are sums, so each day's feedback is added
   without retraining from scratch (partial fit).
 - **Arm exclusion.** Some arms are not allowed for some customers (already owned,
   incompatible promotion). Mask them at decision time.
@@ -54,7 +57,7 @@ I did not develop the model, and "bandits" is deliberately not in my Skills.
    explores new or changed offers without a separate test.
 2. **Explain the UCB term.** Uncertainty in the estimate for this context; large for
    contexts or arms seldom seen, so they get tried.
-3. **How do you choose α?** Trade-off between exploration cost and adaptation speed;
+3. **How do you choose $$\alpha$$?** Trade-off between exploration cost and adaptation speed;
    tuned offline on logged data or by an online comparison.
 4. **How did you find the exclusion bug?** Customers were offered what they held; traced
    to "allowed if any promotion permits" where the rule should be "blocked if any

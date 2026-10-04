@@ -12,12 +12,12 @@ groups are comparable, and say which assumption carries the argument.
 
 ## Key ideas
 
-- **Potential outcomes.** `Y(1)`, `Y(0)`; the individual effect `Y(1) − Y(0)` is never
+- **Potential outcomes.** $$Y(1)$$, $$Y(0)$$; the individual effect $$Y(1) - Y(0)$$ is never
   observed.
 - **Estimands.**
   - *ATE*: average effect over everyone.
   - *ATT*: average effect on those treated.
-  - *CATE*: average effect for a subgroup `X = x`.
+  - *CATE*: average effect for a subgroup $$X = x$$.
 - **Confounder.** A variable that causes both treatment and outcome. Comparing treated
   and untreated without adjusting mixes its effect in.
 - **Causal graph (DAG).** Nodes are variables, arrows are direct causes.
@@ -33,8 +33,8 @@ groups are comparable, and say which assumption carries the argument.
 - **Methods.**
   - *Regression adjustment*: include confounders as covariates.
   - *Matching*: compare each treated unit with similar untreated ones.
-  - *Propensity score* `e(x) = P(T=1 | X=x)`: match or stratify on it, or weight by
-    `1/e` and `1/(1−e)` (inverse propensity weighting).
+  - *Propensity score* $$e(x) = P(T = 1 \mid X = x)$$: match or stratify on it, or weight by
+    $$1/e$$ and $$1/(1-e)$$ (inverse propensity weighting).
   - *Doubly robust*: combines an outcome model and a propensity model; right if either
     is.
   - *Natural experiments*: difference-in-differences, instrumental variables, regression

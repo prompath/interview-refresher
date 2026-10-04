@@ -11,8 +11,8 @@ correct the significance level for the number of them.
 
 ## Key ideas
 
-- **Family-wise error.** With `m` independent comparisons at α = 0.05, the chance of at
-  least one false positive is `1 − 0.95^m`: 14% for three, 26% for six.
+- **Family-wise error.** With $$m$$ independent comparisons at α = 0.05, the chance of at
+  least one false positive is $$1 - 0.95^m$$: 14% for three, 26% for six.
 - **How many comparisons.** Four arms give three comparisons against a control, or six if
   every pair is compared. Fewer planned comparisons means less correction.
 - **Corrections.**

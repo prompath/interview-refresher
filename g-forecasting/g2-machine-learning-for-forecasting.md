@@ -15,7 +15,7 @@ forecast several steps ahead.
 - **Reduction.** Slide a window over the series: features = last `w` values, target = the
   next one. sktime calls this *reduction* and wraps any scikit-learn regressor.
 - **Features.**
-  - *Lags*: `y_{t−1}`, `y_{t−24}`, `y_{t−168}` for hourly data.
+  - *Lags*: $$y_{t-1}$$, $$y_{t-24}$$, $$y_{t-168}$$ for hourly data.
   - *Rolling*: mean, min, max, standard deviation over past windows.
   - *Calendar*: hour, day of week, month, holiday; cyclical encoding with sine and cosine.
   - *Exogenous*: temperature, price, promotions. Future values must be *known or

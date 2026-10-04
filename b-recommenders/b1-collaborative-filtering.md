@@ -17,13 +17,13 @@ bought, not a score.
   clicks. Implicit data has no negatives; a missing entry means "unknown", not "disliked".
 - **Item-based neighbourhood.** Similarity between item columns (cosine, Jaccard);
   recommend items similar to what the user has. Easy to explain and stable.
-- **Matrix factorisation.** Approximate the user × item matrix `R ≈ U · Vᵀ` with `k`
-  latent factors. Score = `u_i · v_j`.
+- **Matrix factorisation.** Approximate the user × item matrix $$R \approx U V^\top$$ with $$k$$
+  latent factors. Score = $$u_i \cdot v_j$$.
 - **ALS for implicit feedback.** Treat every cell as a preference (1 if interacted, else 0) with a confidence
-  weight `c = 1 + α·r` that grows with interaction strength; alternate between solving
+  weight $$c = 1 + \alpha r$$ that grows with interaction strength; alternate between solving
   for users with items fixed and the reverse. Each step is a least-squares problem and
   parallelises well (Spark ML's `ALS` with `implicitPrefs=True`).
-- **Hyperparameters.** Rank `k`, regularisation, confidence scale α, iterations.
+- **Hyperparameters.** Rank $$k$$, regularisation, confidence scale $$\alpha$$, iterations.
 - **Cold start.** New users or items have no interactions. Fall back to popularity,
   segment rules or content features.
 - **Popularity bias.** Models over-recommend popular items; check coverage and

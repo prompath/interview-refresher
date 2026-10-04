@@ -14,19 +14,19 @@ of such a project.
 
 - **Price elasticity.**
 
-  ```
-  elasticity = % change in quantity / % change in price
-  ```
+  $$
+  \text{elasticity} = \frac{\%\ \text{change in quantity}}{\%\ \text{change in price}}
+  $$
 
   Below −1 (elastic): cutting price raises revenue. Between −1 and 0 (inelastic): raising
   price raises revenue.
-- **Log-log demand model.** `log(q) = a + b·log(p) + controls`; `b` is the elasticity.
+- **Log-log demand model.** $$\log q = a + b \log p + \text{controls}$$; $$b$$ is the elasticity.
 - **Controls.** Seasonality, promotions, holidays, stock-outs, competitor price,
   cross-effects from substitutes and complements (cannibalisation).
 - **Endogeneity.** Prices are set in response to demand (raised when demand is high), so
   the naive estimate is biased. Remedies: price experiments, instruments (cost shocks),
   careful controls.
-- **Optimisation.** Profit `(p − cost) · q(p)`; constraints such as price ranges, price
+- **Optimisation.** Profit $$(p - \text{cost}) \cdot q(p)$$; constraints such as price ranges, price
   ladders, margin floors, limited changes per period, consistent pricing across related
   items.
 - **Preprocessing pipeline: what it must handle.**

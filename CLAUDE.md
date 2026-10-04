@@ -8,7 +8,10 @@ https://prompath.github.io/interview-refresher/. This repository is public.
   rules. When the CV changes, update the "On my CV" section of the matching pages here.
 - Every topic page keeps the same parts: In one minute, Key ideas, On my CV, Likely
   questions, Pitfalls, Sources. A new page also needs a row in `index.md`.
-- Formulas go in code blocks; the site does not render maths.
+- Formulas are LaTeX between `$$` pairs, rendered by MathJax: inline within a sentence,
+  or as a display block on its own lines with a blank line before and after. Write
+  `\mid` and `\lvert`, never a bare `|`, and never two opening braces in a row (the
+  site generator would read them as a template tag).
 - Nothing about my employers beyond what the CV itself says: no vendor or consultant
   names, no absolute numbers (customer counts, conversions, revenue), no internal table,
   job or repository names. Uplift percentages are fine. My own interview stories stay as

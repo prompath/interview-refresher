@@ -14,7 +14,7 @@ machine learning forecaster has to beat.
 
 - **Decomposition.** Trend, seasonal and remainder, additive or multiplicative (STL).
 - **Stationarity.** Mean, variance and autocorrelation constant over time. ARIMA needs it;
-  differencing (`y_t − y_{t−1}`, or seasonal `y_t − y_{t−m}`) and log transforms get
+  differencing ($$y_t - y_{t-1}$$, or seasonal $$y_t - y_{t-m}$$) and log transforms get
   there. Tests: ADF (null: non-stationary), KPSS (null: stationary).
 - **ACF and PACF.** Autocorrelation at each lag, and autocorrelation with shorter lags
   removed. A PACF cut-off at lag p suggests AR(p); an ACF cut-off at lag q suggests MA(q).

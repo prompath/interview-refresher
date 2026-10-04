@@ -33,10 +33,9 @@ future or the target out of the features.
   so far. Reduces bias; needs a learning rate and early stopping.
 - **Classification metrics.**
 
-  ```
-  precision = TP / (TP + FP)        recall = TP / (TP + FN)
-  F1 = 2 · precision · recall / (precision + recall)
-  ```
+  $$
+  \text{precision} = \frac{TP}{TP + FP} \qquad \text{recall} = \frac{TP}{TP + FN} \qquad F_1 = \frac{2 \cdot \text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}}
+  $$
 
   ROC AUC: probability a random positive is ranked above a random negative. PR AUC for
   rare positives. Log loss for probability quality. The threshold is a business choice.

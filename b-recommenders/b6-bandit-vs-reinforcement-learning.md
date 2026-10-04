@@ -16,9 +16,9 @@ contextual bandits.
   - *Multi-armed bandit*: actions and rewards, no context.
   - *Contextual bandit*: context → action → immediate reward.
   - *Reinforcement learning*: state → action → reward and next state; maximise discounted
-    return `Σ γ^t r_t`.
+    return $$\sum_t \gamma^t r_t$$.
 - **Markov decision process.** States, actions, transition probabilities, rewards,
-  discount γ. A *policy* maps states to actions; a *value function* gives expected return.
+  discount $$\gamma$$. A *policy* maps states to actions; a *value function* gives expected return.
 - **Core RL ideas by name.** Q-learning (learn action values with the Bellman update),
   policy gradient (optimise the policy directly), temporal difference learning, credit
   assignment for delayed reward.

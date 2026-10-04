@@ -13,14 +13,14 @@ planners' trust by reproducing and then improving on their own plans.
 
 - **Infeasibility.** Real inputs often conflict. Find the cause by relaxing constraint
   groups one at a time, or with a solver's irreducible infeasible subset.
-- **Soft constraints.** Replace `out ≥ quota` with `out + short ≥ quota`, `short ≥ 0`,
-  and subtract `penalty · short` in the objective. The model always returns a plan and
+- **Soft constraints.** Replace $$\text{out} \ge \text{quota}$$ with $$\text{out} + \text{short} \ge \text{quota}$$, $$\text{short} \ge 0$$,
+  and subtract $$\text{penalty} \cdot \text{short}$$ in the objective. The model always returns a plan and
   shows what was missed. Penalties encode priorities.
-- **Big-M.** Links a continuous variable to a binary: `x ≤ M · y`. Choose `M` as small as
-  is valid (the real capacity); a huge `M` weakens the relaxation and causes numerical
+- **Big-M.** Links a continuous variable to a binary: $$x \le M y$$. Choose $$M$$ as small as
+  is valid (the real capacity); a huge $$M$$ weakens the relaxation and causes numerical
   trouble.
 - **Common linearisations.**
-  - Fixed cost or minimum run: `L · y ≤ x ≤ U · y`.
+  - Fixed cost or minimum run: $$L y \le x \le U y$$.
   - Either-or constraints: one binary and big-M.
   - Product of a binary and a bounded continuous variable: three linear inequalities.
   - Piecewise-linear curves: segments with binaries or special ordered sets.

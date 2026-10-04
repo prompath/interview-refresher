@@ -18,14 +18,17 @@ the split is what I asked for, then analyse once, at the planned end.
   can veto a win but do not declare one.
 - **Power and sample size.** For two conversion rates, per group:
 
-  ```
-  n ≈ 2 · (z_{α/2} + z_β)² · p(1 − p) / δ²
-  n ≈ 16 · p(1 − p) / δ²        (α = 0.05 two-sided, power = 80%)
-  ```
+  $$
+  n \approx \frac{2\,(z_{\alpha/2} + z_{\beta})^2 \; p(1-p)}{\delta^2}
+  $$
 
-  `p` is the baseline rate and `δ` the absolute minimum detectable effect. Halving `δ`
-  quadruples `n`.
-- **Duration.** Long enough to reach `n` and to cover whole cycles (a billing cycle in
+  $$
+  n \approx \frac{16\, p(1-p)}{\delta^2} \qquad (\alpha = 0.05 \text{ two-sided, power } = 80\%)
+  $$
+
+  $$p$$ is the baseline rate and $$\delta$$ the absolute minimum detectable effect. Halving
+  $$\delta$$ quadruples $$n$$.
+- **Duration.** Long enough to reach $$n$$ and to cover whole cycles (a billing cycle in
   telecom, at least full weeks elsewhere).
 - **Peeking.** Checking daily and stopping at the first p < 0.05 inflates false positives
   well above 5%. Either fix the horizon or use a sequential method (alpha spending,

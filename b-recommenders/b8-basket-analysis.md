@@ -12,11 +12,13 @@ to explain, and makes a quick proof of concept for cross-sell before a full reco
 
 - **Measures for a rule A → B.**
 
-  ```
-  support(A,B)    = P(A and B)
-  confidence      = P(B | A) = support(A,B) / support(A)
-  lift            = P(B | A) / P(B)
-  ```
+  $$
+  \begin{aligned}
+  \text{support}(A, B) &= P(A \cap B) \\
+  \text{confidence}(A \to B) &= P(B \mid A) = \frac{\text{support}(A, B)}{\text{support}(A)} \\
+  \text{lift}(A \to B) &= \frac{P(B \mid A)}{P(B)}
+  \end{aligned}
+  $$
 
   Lift above 1 means A and B occur together more than if independent. High confidence
   with lift near 1 just means B is popular.

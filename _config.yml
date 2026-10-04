@@ -1,6 +1,6 @@
 title: Interview refresher
 description: One-page refreshers for data science interviews
-theme: jekyll-theme-primer
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-relative-links
 relative_links:

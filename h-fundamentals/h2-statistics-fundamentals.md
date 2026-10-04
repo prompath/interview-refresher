@@ -18,8 +18,8 @@ size. Confidence intervals and hypothesis tests are both built on that.
   - *Exponential*: waiting times.
   - *Log-normal, heavy-tailed*: revenue, usage.
 - **Mean, variance, standard deviation; median and quantiles** for skewed data.
-- **Standard error.** Standard deviation of an estimate: `s / sqrt(n)` for a mean,
-  `sqrt(p(1−p)/n)` for a proportion.
+- **Standard error.** Standard deviation of an estimate: $$s / \sqrt{n}$$ for a mean,
+  $$\sqrt{p(1-p)/n}$$ for a proportion.
 - **Law of large numbers.** The sample mean converges to the true mean.
 - **Central limit theorem.** The sample mean of independent draws is approximately normal
   for large n, whatever the underlying distribution (finite variance). Slow for very
@@ -33,9 +33,9 @@ size. Confidence intervals and hypothesis tests are both built on that.
   with no simple formula. Resample the independent unit (customers, not rows).
 - **Bayes' rule.**
 
-  ```
-  P(A | B) = P(B | A) · P(A) / P(B)
-  ```
+  $$
+  P(A \mid B) = \frac{P(B \mid A)\, P(A)}{P(B)}
+  $$
 
   Classic use: a positive result from an accurate test for a rare condition is still
   probably a false positive, because the base rate is low.
@@ -43,7 +43,7 @@ size. Confidence intervals and hypothesis tests are both built on that.
   probability statements about the parameter; versus long-run frequency guarantees.
 - **Correlation.** Pearson (linear), Spearman (rank). Not causation; sensitive to
   outliers; zero correlation does not mean independence.
-- **Covariance and variance of a sum.** `Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)`.
+- **Covariance and variance of a sum.** $$\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X,Y)$$.
 - **Maximum likelihood.** Choose parameters that make the observed data most probable;
   logistic regression is fitted this way.
 - **Paradoxes.** Simpson's paradox (a trend reverses when groups are combined);

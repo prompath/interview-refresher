@@ -12,7 +12,7 @@ models, which predict who will buy, not who will be persuaded.
 ## Key ideas
 
 - **Target.** The conditional average treatment effect:
-  `τ(x) = E[Y | X=x, treated] − E[Y | X=x, control]`.
+  $$\tau(x) = E[Y \mid X = x, \text{treated}] - E[Y \mid X = x, \text{control}]$$.
 - **Four segments.** Persuadables (buy only if treated), sure things (buy anyway), lost
   causes (never buy), sleeping dogs (buy only if left alone). A propensity model ranks
   sure things highest; an uplift model ranks persuadables highest.

@@ -18,13 +18,15 @@ to compare across series. Every result is shown next to a naive baseline.
   arrive late in production.
 - **Metrics.**
 
-  ```
-  MAE   = mean |y − ŷ|
-  RMSE  = sqrt( mean (y − ŷ)² )              penalises large errors
-  MAPE  = mean |y − ŷ| / |y|                 undefined at y = 0, favours under-forecasts
-  sMAPE = mean 2|y − ŷ| / (|y| + |ŷ|)        bounded, still unstable near zero
-  MASE  = MAE / MAE of the naive forecast in-sample     < 1 beats naive
-  ```
+  $$
+  \begin{aligned}
+  \text{MAE} &= \operatorname{mean} \lvert y - \hat{y} \rvert \\
+  \text{RMSE} &= \sqrt{\operatorname{mean} (y - \hat{y})^2} && \text{penalises large errors} \\
+  \text{MAPE} &= \operatorname{mean} \frac{\lvert y - \hat{y} \rvert}{\lvert y \rvert} && \text{undefined at } y = 0 \text{, favours under-forecasts} \\
+  \text{sMAPE} &= \operatorname{mean} \frac{2 \lvert y - \hat{y} \rvert}{\lvert y \rvert + \lvert \hat{y} \rvert} && \text{bounded, still unstable near zero} \\
+  \text{MASE} &= \frac{\text{MAE}}{\text{in-sample MAE of the naive forecast}} && \text{below 1 beats naive}
+  \end{aligned}
+  $$
 
 - **Which metric.**
   - MAE: median-like, robust.

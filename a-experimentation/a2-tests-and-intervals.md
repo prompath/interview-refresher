@@ -13,22 +13,22 @@ the p-value alone says nothing about size.
 
 - **Two-proportion z-test.**
 
-  ```
-  z = (p_t − p_c) / sqrt( p(1 − p) · (1/n_t + 1/n_c) )      p = pooled rate
-  ```
+  $$
+  z = \frac{p_t - p_c}{\sqrt{p(1-p)\left(\frac{1}{n_t} + \frac{1}{n_c}\right)}} \qquad p = \text{pooled rate}
+  $$
 
 - **Interval for the absolute difference** uses the unpooled standard error:
 
-  ```
-  (p_t − p_c) ± 1.96 · sqrt( p_t(1−p_t)/n_t + p_c(1−p_c)/n_c )
-  ```
+  $$
+  (p_t - p_c) \pm 1.96 \sqrt{\frac{p_t(1-p_t)}{n_t} + \frac{p_c(1-p_c)}{n_c}}
+  $$
 
 - **Interval for relative uplift** `p_t/p_c − 1`. The ratio is not normal, so work on the
   log scale (delta method) and transform back, or bootstrap:
 
-  ```
-  Var( ln(p_t/p_c) ) ≈ (1−p_t)/(n_t·p_t) + (1−p_c)/(n_c·p_c)
-  ```
+  $$
+  \operatorname{Var}\left(\ln\frac{p_t}{p_c}\right) \approx \frac{1-p_t}{n_t\,p_t} + \frac{1-p_c}{n_c\,p_c}
+  $$
 
   A small control group makes this interval wide and lopsided.
 - **Chi-square test.** For two groups it gives z². For more than two groups it is the

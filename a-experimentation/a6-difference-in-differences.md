@@ -14,15 +14,15 @@ without the treatment.
 
 - **Estimator.**
 
-  ```
-  DiD = (Y_treat,post − Y_treat,pre) − (Y_ctrl,post − Y_ctrl,pre)
-  ```
+  $$
+  \text{DiD} = \left(\bar{Y}_{\text{treat,post}} - \bar{Y}_{\text{treat,pre}}\right) - \left(\bar{Y}_{\text{ctrl,post}} - \bar{Y}_{\text{ctrl,pre}}\right)
+  $$
 
 - **Regression form.** Same number, with standard errors and room for covariates:
 
-  ```
-  Y = β0 + β1·Treat + β2·Post + β3·(Treat × Post) + ε        effect = β3
-  ```
+  $$
+  Y = \beta_0 + \beta_1\,\text{Treat} + \beta_2\,\text{Post} + \beta_3\,(\text{Treat} \times \text{Post}) + \varepsilon \qquad \text{effect} = \beta_3
+  $$
 
   Cluster standard errors by customer when there are several periods per customer.
 - **Parallel trends.** The identifying assumption: absent treatment, the gap between

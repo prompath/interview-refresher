@@ -12,21 +12,21 @@ bilinear and non-convex.
 
 ## Key ideas
 
-- **Blending (linear).** Inputs `i` with known quality `q[i]`; amounts `x[i]`:
+- **Blending (linear).** Inputs $$i$$ with known quality $$q_i$$; amounts $$x_i$$:
 
-  ```
-  Σ q[i]·x[i] ≤ q_max · Σ x[i]        quality limit on the blend
-  ```
+  $$
+  \sum_i q_i\, x_i \le q_{\max} \sum_i x_i \qquad \text{(quality limit on the blend)}
+  $$
 
-  Linear because `q[i]` is data. The classic examples are diet, feed mix and fuel
+  Linear because $$q_i$$ is data. The classic examples are diet, feed mix and fuel
   blending.
-- **Pooling (bilinear).** Sources → pools → products. Pool quality `p` is unknown:
+- **Pooling (bilinear).** Sources → pools → products. Pool quality $$p$$ is unknown:
 
-  ```
-  p · (outflow) = Σ q[i] · (inflow from i)
-  ```
+  $$
+  p \cdot \text{outflow} = \sum_i q_i \cdot \text{inflow}_i
+  $$
 
-  `p · outflow` multiplies two variables. Many local optima; no guarantee from an LP
+  $$p \cdot \text{outflow}$$ multiplies two variables. Many local optima; no guarantee from an LP
   solver.
 - **Ways to handle pooling.**
   - Fix the pool compositions or the split fractions and solve an LP; iterate

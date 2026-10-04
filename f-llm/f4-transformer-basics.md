@@ -17,9 +17,9 @@ a probability for each possible next token, sample one, append it, and go again.
   added because attention itself ignores order.
 - **Self-attention.**
 
-  ```
-  Attention(Q, K, V) = softmax( Q·Kᵀ / sqrt(d) ) · V
-  ```
+  $$
+  \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{Q K^\top}{\sqrt{d}}\right) V
+  $$
 
   Each token forms a query, compares it with every token's key, and takes a weighted
   average of their values. Several heads run in parallel.
